@@ -90,14 +90,13 @@ window.addEventListener("load", function(e) {
     }else{
         alert("The browser does not support Media Interface");
     }
-    // wionload = function(){
+
     var tmp = document.getElementById("im");
     regioncanvas.getContext("2d").drawImage(tmp, 0, 0);
 
-    var tmp_data = imregioncanvas.getImageData(0, 0, 480, 320);
-    cd_region = getCD(tmp_data.data, 480, tmp.height);
+    var tmp_data = imregioncanvas.getImageData(0, 0, 480, 480);
+    cd_region = getCD(tmp_data.data, 480, 480);
     console.log("corners and descriptors are :" + cd_region);
-    // }
 
     tracking.ColorTracker.registerColor('mycustom', function(r,g,b){
         return true;
