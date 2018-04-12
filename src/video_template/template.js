@@ -155,8 +155,11 @@ function getNearestMatch(cd1, cd2){
 
 
 function plot_matches(matches){
+  if (matches.length < 10)
+  {
     imcanvas.clearRect(0, 0, 480, 480);
     imregioncanvas.clearRect(0, 0, 480, 480);
+  }
     //console.log("plotting matches");
     if (matches.length > 10)
     {
