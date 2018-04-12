@@ -158,21 +158,25 @@ function plot_matches(matches){
     imcanvas.clearRect(0, 0, 480, 320);
     imregioncanvas.clearRect(0, 0, 480, 320);
     //console.log("plotting matches");
+    if (matches.length > 10)
+    {
     for (var i = 0; i < matches.length; i++) {
         var color = "red";
-        imcanvas.lineWidth = "2px";
+        imcanvas.lineWidth = "10px";
         imcanvas.fillStyle = color;
         imcanvas.strokeStyle = color;
         imcanvas.beginPath();
         imcanvas.arc(matches[i].keypoint1[0], matches[i].keypoint1[1], 4, 0, 2*Math.PI);
         imcanvas.stroke();
 
-        imregioncanvas.lineWidth = "2px";
+        imregioncanvas.lineWidth = "10px";
         imregioncanvas.fillStyle = color;
         imregioncanvas.strokeStyle = color;
         imregioncanvas.beginPath();
         imregioncanvas.arc(matches[i].keypoint1[0], matches[i].keypoint1[1], 4, 0, 2*Math.PI);
         imregioncanvas.stroke();
     }
+
+  }
 
 }
