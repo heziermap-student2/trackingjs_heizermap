@@ -145,6 +145,8 @@ function getNearestMatch(cd1, cd2){
     matches.sort(function(a, b){
         //return  b.confidence - a.confidence;
         return b.length - a.length;
+        console.log(b.length - a.length);
+        console.log(b.confidence - a.confidence);
     });
     console.log(matches);
     return matches;
