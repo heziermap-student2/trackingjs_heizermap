@@ -158,7 +158,8 @@ function plot_matches(matches){
     imcanvas.clearRect(0, 0, 480, 480);
     imregioncanvas.clearRect(0, 0, 480, 480);
     //console.log("plotting matches");
-    if (matches.length > 20)
+    console.log(matches.length);
+    if (matches.length > 30)
     {
     for (var i = 0; i < matches.length; i++) {
         var color = "red";
