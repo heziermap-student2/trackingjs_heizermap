@@ -38,6 +38,9 @@ var color_tracker;
 
 function watch_video(){
 
+  // Wait for the page to be ready
+window.addEventListener("load", function(e) {
+
 
     /*
      Initialize all selectors.
@@ -103,6 +106,7 @@ function watch_video(){
     color_tracker.on("track", process_video);
     tracking.track("#myVideo", color_tracker);
 
+});
 
 }
 
