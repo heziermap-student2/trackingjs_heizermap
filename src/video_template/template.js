@@ -95,6 +95,7 @@ window.addEventListener("load", function(e) {
     regioncanvas.getContext("2d").drawImage(tmp, 0, 0);
 
     var tmp_data = imregioncanvas.getImageData(0, 0, 480, 480);
+    console.log(tmp_data);
     cd_region = getCD(tmp_data.data, 480, 480);
     console.log("corners and descriptors are :" + cd_region);
 
