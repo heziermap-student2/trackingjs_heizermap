@@ -126,9 +126,9 @@ function error_stream(error){
 
 function process_video(data){
     imcanvas.drawImage(video_frame, 0, 0);
-    var im_frame = imcanvas.getImageData(0, 0, 480, 320);
+    var im_frame = imcanvas.getImageData(0, 0, 480, 480);
     // console.log(im_frame);
-    var cd_frame = getCD(im_frame.data, 480, 320);
+    var cd_frame = getCD(im_frame.data, 480, 480);
     // console.log(cd_frame);
     var matches = getNearestMatch(cd_frame, cd_region);
     plot_matches(matches);
@@ -155,8 +155,8 @@ function getNearestMatch(cd1, cd2){
 
 
 function plot_matches(matches){
-    imcanvas.clearRect(0, 0, 480, 320);
-    imregioncanvas.clearRect(0, 0, 480, 320);
+    imcanvas.clearRect(0, 0, 480, 480);
+    imregioncanvas.clearRect(0, 0, 480, 480);
     //console.log("plotting matches");
     if (matches.length > 10)
     {
