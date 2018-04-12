@@ -92,7 +92,7 @@ function watch_video(){
     regioncanvas.getContext("2d").drawImage(tmp, 0, 0);
 
     var tmp_data = imregioncanvas.getImageData(0, 0, 480, 320);
-    cd_region = getCD(tmp_data.data, 480, 320);
+    cd_region = getCD(tmp_data.data, 480, tmp.height);
     console.log("corners and descriptors are :" + cd_region);
     // }
 
@@ -145,7 +145,7 @@ function getNearestMatch(cd1, cd2){
     matches.sort(function(a, b){
         return  b.confidence - a.confidence;
     });
-    console.log(matches);
+    //console.log(matches);
     return matches;
 }
 
@@ -153,7 +153,7 @@ function getNearestMatch(cd1, cd2){
 function plot_matches(matches){
     imcanvas.clearRect(0, 0, 480, 320);
     imregioncanvas.clearRect(0, 0, 480, 320);
-    console.log("plotting matches");
+    //console.log("plotting matches");
     for (var i = 0; i < matches.length; i++) {
         var color = "red";
         imcanvas.lineWidth = "2px";
