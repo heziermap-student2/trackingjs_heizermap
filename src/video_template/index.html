@@ -31,13 +31,17 @@
 </head>
 <body>
 
+    <div class="container">
         <div class="page-header">
             <h2>Feature based video matching</h2>
 
         </div>
+        <div class="row">
 
+          <div class="col-md-4">
             <video autoplay="true" id="myVideo" width="480" height="480"></video>
             <canvas id="canvas" width="480" height="480"></canvas>
+          </div>
 
           <p>Target match Image</p>
           <div id="imspace">
@@ -45,6 +49,8 @@
             <canvas id="regioncanvas" width="480" height="480"></canvas>
           </div>
 
+        </div>
+      </div>
 
     <script>watch_video();</script>
 
