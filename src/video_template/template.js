@@ -136,8 +136,7 @@ function process_video(data){
 
 function getCD(im, w, h){
     var gray_im = tracking.Image.grayscale(im, w, h);
-    var blurred = tracking.Image.blur(gray_im, w, h, 3);
-    var corners = tracking.Fast.findCorners(blurred, w, h);
+    var corners = tracking.Fast.findCorners(gray_im, w, h);
     var desc = tracking.Brief.getDescriptors(gray_im, w, corners);
     return [corners, desc];
 
