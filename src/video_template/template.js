@@ -135,14 +135,9 @@ function process_video(data){
 }
 
 function getCD(im, w, h){
-    tracking.Brief.N = 512;
     var gray_im = tracking.Image.grayscale(im, w, h);
-    var blurred4 = tracking.Image.blur(gray_im, w, h, 3);
-    var blurred1 = new Array(blurred4.length / 4);
-    for (var i = 0, j = 0; i < blurred4.length; i += 4, ++j) {
-      blurred1[j] = blurred4[i];
-    }
-    var corners = tracking.Fast.findCorners(blurred1, w, h);
+    var blurred = tracking.Image.blur(gray_im, w, h, 3);
+    var corners = tracking.Fast.findCorners(blurred, w, h);
     var desc = tracking.Brief.getDescriptors(gray_im, w, corners);
     return [corners, desc];
 
