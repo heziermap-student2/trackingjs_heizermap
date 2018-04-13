@@ -135,9 +135,9 @@ function process_video(data){
 }
 
 function getCD(im, w, h){
-    //var gray_im = tracking.Image.grayscale(im, w, h);
-    var corners = tracking.Fast.findCorners(im, w, h);
-    var desc = tracking.Brief.getDescriptors(im, w, corners);
+    var gray_im = tracking.Image.grayscale(im, w, h);
+    var corners = tracking.Fast.findCorners(gray_im, w, h);
+    var desc = tracking.Brief.getDescriptors(gray_im, w, corners);
     return [corners, desc];
 
 }
@@ -147,6 +147,7 @@ function getNearestMatch(cd1, cd2){
     var matches = tracking.Brief.reciprocalMatch(cd1[0], cd1[1], cd2[0], cd2[1]);
     matches.sort(function(a, b){
         return  b.confidence - a.confidence;
+        //return b.matches - a.matches;
     });
     //console.log(matches);
     return matches;
