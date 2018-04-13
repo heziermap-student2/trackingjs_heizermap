@@ -146,8 +146,8 @@ function getCD(im, w, h){
 function getNearestMatch(cd1, cd2){
     var matches = tracking.Brief.reciprocalMatch(cd1[0], cd1[1], cd2[0], cd2[1]);
     matches.sort(function(a, b){
-        //return  b.confidence - a.confidence;
-        return b.matches - a.matches;
+        return  b.confidence - a.confidence;
+        //return b.matches - a.matches;
     });
     //console.log(matches);
     return matches;
