@@ -135,6 +135,7 @@ function process_video(data){
 }
 
 function getCD(im, w, h){
+    tracking.Brief.N = 512;
     var gray_im = tracking.Image.grayscale(im, w, h);
     var blurred4 = tracking.Image.blur(gray_im, w, h, 3);
     var blurred1 = new Array(blurred4.length / 4);
